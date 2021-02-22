@@ -21,7 +21,6 @@ while True:
     client, address = s.accept()
     tm = client.recv(1024)
     result_dict = from_json_bytes_to_dict(tm)
-    print(result_dict)
     if result_dict['command'] == 'get_archive':
         data_archive = get_archive()
         bytes_data_for_client = form_passed_package('set_archive', data_archive)
